@@ -11,7 +11,11 @@ class App extends Component {
     page: 1
   };
 
-  
+  nextPage = () => {
+    this.setState(prevState =>({
+      page: prevState.page + 1
+    }))
+  }
 
   getInputValue = element => {
     this.setState({
@@ -23,7 +27,7 @@ class App extends Component {
     return (
       <section className={css.App}>
         <Searchbar getInputValue={this.getInputValue} />
-        <ImageGallery nameImage={this.state.inputValue} />
+        <ImageGallery nameImage={this.state.inputValue} nextPage={this.nextPage} page={this.state.page} />
         <ToastContainer/>
       </section>
     );

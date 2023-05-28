@@ -2,7 +2,7 @@ import axios from 'axios';
 
 
 
-export default async function imgApiService(inputValue, page = 1) {
+export default async function imgApiService(inputValue, page=1) {
   const url = 'https://pixabay.com/api/';
   const API_KEY = '34849127-969aa955091248fba76eeb517';
 

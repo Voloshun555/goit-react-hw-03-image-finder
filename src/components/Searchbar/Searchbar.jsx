@@ -14,7 +14,7 @@ class Searchbar extends Component {
     e.preventDefault();
    
     if (this.state.name.trim() === '') {
-      toast.error('Напишіть щось');
+      toast.error('Ви нічого не написали!');
         return;
     }
     
@@ -44,10 +44,10 @@ class Searchbar extends Component {
           <input
             value={this.state.name}
             type="text"
-            autocomplete="off"
+            autoComplete="off"
             onChange={this.handleChange}
             className={css.SearchFormInput}
-            autofocus
+            autoFocus
             placeholder="Search images and photos"
           />
         </form>
