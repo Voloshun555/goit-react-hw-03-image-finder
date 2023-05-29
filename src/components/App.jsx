@@ -19,7 +19,7 @@ class App extends Component {
 
   getInputValue = element => {
     this.setState({
-      inputValue: element,
+      inputValue: element, page: 1
     });
   };
 
