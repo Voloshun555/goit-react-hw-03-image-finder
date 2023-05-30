@@ -1,28 +1,31 @@
 import { Component } from 'react';
+import PropTypes from 'prop-types';
 import css from './Searchbar.module.css';
 import { AiOutlineCheck } from 'react-icons/ai';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-
 class Searchbar extends Component {
+  static propTypes = {
+    name: PropTypes.string,
+  };
+
   state = {
     name: '',
   };
 
   hendleSubmit = e => {
     e.preventDefault();
-   
+
     if (this.state.name.trim() === '') {
       toast.error('Ви нічого не написали!');
-        return;
+      return;
     }
-    
+
     this.props.getInputValue(this.state.name);
     this.setState({
       name: '',
     });
-   
   };
 
   handleChange = e => {
@@ -35,9 +38,7 @@ class Searchbar extends Component {
   render() {
     return (
       <header className={css.Searchbar}>
-        <form 
-        className={css.SearchForm} 
-        onSubmit={this.hendleSubmit}>
+        <form className={css.SearchForm} onSubmit={this.hendleSubmit}>
           <button type="submit" className={css.SearchFormButton}>
             <AiOutlineCheck className={css.SearchFormButtonLabel} />
           </button>
