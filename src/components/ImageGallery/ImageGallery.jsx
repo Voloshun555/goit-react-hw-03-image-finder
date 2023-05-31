@@ -19,7 +19,7 @@ export const ImageGallery = ({ galary, openModal }) => {
 ImageGalleryItem.propTypers = {
   galary: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.number.isRequired,
+      id: PropTypes.string.isRequired,
       tags: PropTypes.string.isRequired,
       webformatURL: PropTypes.string.isRequired,
       largeImageURL: PropTypes.string.isRequired,
