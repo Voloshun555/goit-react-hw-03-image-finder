@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 class Searchbar extends Component {
   static propTypes = {
-    name: PropTypes.string,
+    onSubmit: PropTypes.func.isRequired,
   };
 
   state = {
@@ -22,7 +22,7 @@ class Searchbar extends Component {
       return;
     }
 
-    this.props.getInputValue(this.state.name);
+    this.props.onSubmit(this.state.name);
     this.setState({
       name: '',
     });

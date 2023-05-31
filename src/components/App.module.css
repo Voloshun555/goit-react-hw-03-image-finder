@@ -36,6 +36,11 @@ html {
     padding-bottom: 24px;
   }
   
+  .TitlePreview{
+    margin-left: auto;
+    margin-right: auto;
+    color: #493ab121;
+  }
   /*
    * Стили компонента Searchbar
    */
